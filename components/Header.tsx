@@ -1,33 +1,46 @@
 import React from "react";
-import { Box, Grid2 } from "@mui/material";
+import { Box } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <Grid2
-      minHeight={67}
+    <Grid
       alignItems="center"
       container
       spacing={2}
-      border="solid 1px green"
-      paddingX={{ xs: "2rem", md: "7rem" }}
+      sx={{
+        minHeight: 67,
+        border: "solid 1px green",
+        paddingX: { xs: "2rem", md: "7rem" },
+      }}
     >
-      <Grid2 display="flex" justifyContent="start" size={{ xs: "grow", md: 2 }}>
+      {/* Brand Name section */}
+      <Grid
+        sx={{ display: "flex", justifyContent: "start" }}
+        size={{ xs: "grow", md: 2 }}
+      >
         <div>Brand Name</div>
-      </Grid2>
-      <Grid2
+      </Grid>
+
+      {/* Search Bar */}
+      <Grid
         size={6}
         justifyContent="flex-start"
         display={{ xs: "none", md: "flex" }}
       >
         <SearchBar />
-      </Grid2>
-      <Grid2
+      </Grid>
+
+      {/* Profile Section */}
+      <Grid
         size="grow"
-        display="flex"
-        alignItems="center"
-        gap="10px"
-        justifyContent="end"
+        sx={{
+          display:"flex",
+          alignItems:"center",
+          gap:"10px",
+          justifyContent:"end",
+        }}
       >
         <Box
           sx={{
@@ -38,8 +51,8 @@ const Header = () => {
           }}
         />
         <Box display={{ xs: "none", md: "block" }}>john</Box>
-      </Grid2>
-    </Grid2>
+      </Grid>
+    </Grid>
   );
 };
 
